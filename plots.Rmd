@@ -1,0 +1,35 @@
+---
+title: "Plots"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+# Here are soooome plots
+
+you can make plots in the same way as always
+
+
+```{r cars}
+library(tidyverse)
+
+df = tibble(
+  x = rnorm(100,2,5),
+  y = 1+2*x- .5*x^2 + rnorm(100)
+)
+
+df %>% 
+  ggplot(aes(x=x,y=y))+
+  geom_point()
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
